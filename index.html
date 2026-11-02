@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeTasks | Modern Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>⚡ TypeTasks</h1>
+      <p class="subtitle">Type-safe task management powered by TypeScript</p>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <input 
+        type="text" 
+        id="task-input" 
+        placeholder="What needs to be done today?" 
+        autocomplete="off" 
+        required 
+      />
+      <button type="submit" id="add-btn">Add Task</button>
+    </form>
+
+    <div class="filters-container">
+      <button class="filter-btn active" data-filter="all">All <span id="count-all" class="count-badge">0</span></button>
+      <button class="filter-btn" data-filter="todo">To Do <span id="count-todo" class="count-badge">0</span></button>
+      <button class="filter-btn" data-filter="in-progress">In Progress <span id="count-in-progress" class="count-badge">0</span></button>
+      <button class="filter-btn" data-filter="done">Done <span id="count-done" class="count-badge">0</span></button>
+    </div>
+
+    <main class="task-list-container">
+      <ul id="task-list" class="task-list"></ul>
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <p>No tasks found in this view. Enjoy your free time! 🎉</p>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
